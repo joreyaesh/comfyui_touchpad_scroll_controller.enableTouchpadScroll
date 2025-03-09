@@ -1,7 +1,7 @@
 import { app } from '../../../scripts/app.js';
 
 app.registerExtension({
-  name: 'Scroll Over Textarea',
+  name: 'ComfyUI Scroll Over Textarea',
   settings: [
     {
       id: 'comfyui_scroll_over_textarea.enable',
@@ -14,7 +14,7 @@ app.registerExtension({
     },
   ],
   async setup() {
-    console.log('Scroll Over Textarea Extension Loaded');
+    console.log('ComfyUI Scroll Over Textarea Extension Loaded');
     const cb = (event) => {
       app.canvas.processMouseWheel(event);
       event.preventDefault();

@@ -33,7 +33,7 @@ homepage = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
 
 [tool.comfy]
 PublisherId = "joreyaesh"
-DisplayName = "Scroll Over Textarea"
+DisplayName = "ComfyUI Scroll Over Textarea"
 Icon = ""
 
 [tool.setuptools.package-data]

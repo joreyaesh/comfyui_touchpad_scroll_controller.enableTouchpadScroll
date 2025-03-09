@@ -1,4 +1,4 @@
-# Scroll Over Textarea
+# ComfyUI Scroll Over Textarea
 
 A ComfyUI extension to allow textarea elements to be scrolled over. Useful when using a trackpad in order to prevent accidental forward/back navigation (two fingers horizontally on a Mac) when scrolling around the UI.
 
