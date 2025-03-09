@@ -21,7 +21,7 @@ A ComfyUI extension to allow textarea elements to be scrolled over. Useful when 
 To install the dev dependencies and pre-commit (will run the ruff hook), do:
 
 ```bash
-cd scroll_over_textarea
+cd comfyui_scroll_over_textarea
 pip install -e .[dev]
 pre-commit install
 ```
@@ -43,7 +43,7 @@ git push
 
 ## Writing custom nodes
 
-An example custom node is located in [node.py](src/scroll_over_textarea/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
+An example custom node is located in [node.py](src/comfyui_scroll_over_textarea/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
 
 ## Tests
 

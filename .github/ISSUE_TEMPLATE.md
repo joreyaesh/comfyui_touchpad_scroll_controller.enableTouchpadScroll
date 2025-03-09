@@ -1,6 +1,6 @@
-* scroll_over_textarea version:
-* Python version:
-* Operating System:
+- comfyui_scroll_over_textarea version:
+- Python version:
+- Operating System:
 
 ### Description
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-"""Tests for `scroll_over_textarea` package."""
+"""Tests for `comfyui_scroll_over_textarea` package."""
 
 import pytest
-from src.scroll_over_textarea.nodes import Example
+from src.comfyui_scroll_over_textarea.nodes import Example
 
 
 @pytest.fixture

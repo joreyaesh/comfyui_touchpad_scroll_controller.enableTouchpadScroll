@@ -3,7 +3,7 @@ requires = ["setuptools>=70.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scroll_over_textarea"
+name = "comfyui_scroll_over_textarea"
 version = "0.1.0"
 description = "A custom node to prevent scrolling within textarea elements"
 authors = [
@@ -27,8 +27,8 @@ dev = [
 ]
 
 [project.urls]
-bugs = "https://github.com/joreyaesh/scroll_over_textarea/issues"
-homepage = "https://github.com/joreyaesh/scroll_over_textarea"
+bugs = "https://github.com/joreyaesh/comfyui_scroll_over_textarea/issues"
+homepage = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
 
 
 [tool.comfy]

@@ -4,7 +4,7 @@ app.registerExtension({
   name: 'Scroll Over Textarea',
   settings: [
     {
-      id: 'scroll_over_textarea.enable',
+      id: 'comfyui_scroll_over_textarea.enable',
       name: 'Prevent Scrolling Within Textareas',
       type: 'boolean',
       defaultValue: true,
@@ -24,7 +24,7 @@ app.registerExtension({
   },
   async nodeCreated(node) {
     const enabled = app.extensionManager.setting.get(
-      'scroll_over_textarea.enable'
+      'comfyui_scroll_over_textarea.enable'
     );
     setTimeout(() => {
       updateTextareaScrollListener(enabled);
@@ -34,7 +34,7 @@ app.registerExtension({
 
 function updateTextareaScrollListener(
   ignoreTextareaScroll = app.extensionManager.setting.get(
-    'scroll_over_textarea.enable'
+    'comfyui_scroll_over_textarea.enable'
   )
 ) {
   const textareas = document.querySelectorAll('textarea.comfy-multiline-input');

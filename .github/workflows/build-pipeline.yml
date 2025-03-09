@@ -1,5 +1,5 @@
 # GitHub CI build pipeline
-name: scroll_over_textarea CI build
+name: comfyui_scroll_over_textarea CI build
 
 on:
   pull_request:
@@ -8,20 +8,20 @@ on:
       - main
 jobs:
   build:
-    runs-on:  ${{ matrix.os }} 
+    runs-on: ${{ matrix.os }}
     env:
-      PYTHONIOENCODING: "utf8"
+      PYTHONIOENCODING: 'utf8'
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: ["3.12"]
+        python-version: ['3.12']
 
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version:  ${{ matrix.python-version }} 
+          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
