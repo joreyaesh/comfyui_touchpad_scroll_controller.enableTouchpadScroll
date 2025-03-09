@@ -1,6 +1,6 @@
 # Scroll Over Textarea
 
-A custom node to prevent scrolling within textarea elements
+A ComfyUI extension to allow textarea elements to be scrolled over. Useful when using a trackpad in order to prevent accidental forward/back navigation (two fingers horizontally on a Mac) when scrolling around the UI.
 
 > [!NOTE]
 > This projected was created with a [cookiecutter](https://github.com/Comfy-Org/cookiecutter-comfy-extension) template. It helps you start writing custom nodes without worrying about the Python setup.
@@ -32,18 +32,18 @@ The `-e` flag above will result in a "live" install, in the sense that any chang
 
 Install Github Desktop or follow these [instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) for ssh.
 
-1. Create a Github repository that matches the directory name. 
+1. Create a Github repository that matches the directory name.
 2. Push the files to Git
+
 ```
 git add .
 git commit -m "project scaffolding"
 git push
-``` 
+```
 
 ## Writing custom nodes
 
 An example custom node is located in [node.py](src/scroll_over_textarea/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
-
 
 ## Tests
 
@@ -58,10 +58,9 @@ If you wish to share this custom node with others in the community, you can publ
 
 You need to make an account on https://registry.comfy.org and create an API key token.
 
-- [ ] Go to the [registry](https://registry.comfy.org). Login and create a publisher id (everything after the `@` sign on your registry profile). 
+- [ ] Go to the [registry](https://registry.comfy.org). Login and create a publisher id (everything after the `@` sign on your registry profile).
 - [ ] Add the publisher id into the pyproject.toml file.
 - [ ] Create an api key on the Registry for publishing from Github. [Instructions](https://docs.comfy.org/registry/publishing#create-an-api-key-for-publishing).
 - [ ] Add it to your Github Repository Secrets as `REGISTRY_ACCESS_TOKEN`.
 
 A Github action will run on every git push. You can also run the Github action manually. Full instructions [here](https://docs.comfy.org/registry/publishing). Join our [discord](https://discord.com/invite/comfyorg) if you have any questions!
-
