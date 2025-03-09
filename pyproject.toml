@@ -29,7 +29,7 @@ dev = [
 [project.urls]
 bugs = "https://github.com/joreyaesh/comfyui_scroll_over_textarea/issues"
 homepage = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
-
+repository = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
 
 [tool.comfy]
 PublisherId = "joreyaesh"
