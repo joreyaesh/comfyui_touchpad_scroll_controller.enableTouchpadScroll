@@ -19,6 +19,6 @@ def test_example_node_initialization(example_node):
 
 def test_return_types():
     """Test the node's metadata."""
-    assert ScrollOverTextareaDummyNode.RETURN_TYPES == ("IMAGE",)
+    assert ScrollOverTextareaDummyNode.RETURN_TYPES == ()
     assert ScrollOverTextareaDummyNode.FUNCTION == "test"
-    assert ScrollOverTextareaDummyNode.CATEGORY == "Example"
+    assert ScrollOverTextareaDummyNode.CATEGORY == "Dummy"
