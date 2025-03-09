@@ -2,7 +2,7 @@
 name: comfyui_scroll_over_textarea CI build
 
 on:
-  pull_request:
+  push:
     branches:
       - master
       - main
