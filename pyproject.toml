@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "comfyui_scroll_over_textarea"
 version = "0.1.0"
-description = "A custom node to prevent scrolling within textarea elements"
+description = "A ComfyUI extension to allow textarea elements to be scrolled over. Useful when using a trackpad in order to prevent accidental forward/back navigation (two fingers horizontally on a Mac) when scrolling around the UI."
 authors = [
   {name = "Josh Whaley", email = "josh@whaleymail.net"}
 ]
