@@ -3,9 +3,9 @@ requires = ["setuptools>=70.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "comfyui_scroll_over_textarea"
-version = "0.1.0"
-description = "A ComfyUI extension to allow textarea elements to be scrolled over. Useful when using a trackpad in order to prevent accidental forward/back navigation (two fingers horizontally on a Mac) when scrolling around the UI."
+name = "comfyui_touchpad_scroll_controller"
+version = "0.2.0"
+description = "A ComfyUI extension that enhances touchpad navigation by redirecting two-finger scrolling over to the canvas, including over textareas. This can prevent accidental back/forward browser navigation when using horizontal touchpad gestures and provides smooth zooming and panning for Mac and other touchpad users."
 authors = [
   {name = "Josh Whaley", email = "josh@whaleymail.net"}
 ]
@@ -27,13 +27,13 @@ dev = [
 ]
 
 [project.urls]
-bugs = "https://github.com/joreyaesh/comfyui_scroll_over_textarea/issues"
-homepage = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
-Repository = "https://github.com/joreyaesh/comfyui_scroll_over_textarea"
+bugs = "https://github.com/joreyaesh/comfyui_touchpad_scroll_controller/issues"
+homepage = "https://github.com/joreyaesh/comfyui_touchpad_scroll_controller"
+Repository = "https://github.com/joreyaesh/comfyui_touchpad_scroll_controller"
 
 [tool.comfy]
 PublisherId = "joreyaesh"
-DisplayName = "ComfyUI Scroll Over Textarea"
+DisplayName = "ComfyUI Touchpad Scroll Controller"
 Icon = ""
 
 [tool.setuptools.package-data]

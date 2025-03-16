@@ -1,7 +1,7 @@
 from inspect import cleandoc
 
 
-class ScrollOverTextareaDummyNode:
+class TouchpadScrollControllerDummyNode:
     """
     An empty dummy node since this has changes only for the UI.
 
@@ -68,7 +68,7 @@ class ScrollOverTextareaDummyNode:
 
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
-NODE_CLASS_MAPPINGS = {"ScrollOverTextareaDummyNode": ScrollOverTextareaDummyNode}
+NODE_CLASS_MAPPINGS = {"TouchpadScrollControllerDummyNode": TouchpadScrollControllerDummyNode}
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
-NODE_DISPLAY_NAME_MAPPINGS = {"ScrollOverTextareaDummyNode": "Scroll Over Textarea"}
+NODE_DISPLAY_NAME_MAPPINGS = {"TouchpadScrollControllerDummyNode": "Touchpad Scroll Controller Dummy Node"}

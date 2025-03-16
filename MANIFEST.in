@@ -6,4 +6,4 @@ recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat *.jpg *.png *.gif
 
-graft src/comfyui_scroll_over_textarea/web
+graft src/comfyui_touchpad_scroll_controller/web

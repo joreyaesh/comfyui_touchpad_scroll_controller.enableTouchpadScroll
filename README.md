@@ -1,6 +1,6 @@
-# ComfyUI Scroll Over Textarea
+# ComfyUI Touchpad Scroll Controller
 
-A ComfyUI extension to allow textarea elements to be scrolled over. Useful when using a trackpad in order to prevent accidental forward/back navigation (two fingers horizontally on a Mac) when scrolling around the UI.
+A ComfyUI extension that enhances touchpad navigation by redirecting two-finger scrolling over to the canvas, including over textareas. This can prevent accidental back/forward browser navigation when using horizontal touchpad gestures and provides smooth zooming and panning for Mac and other touchpad users.
 
 > [!NOTE]
 > This projected was created with a [cookiecutter](https://github.com/Comfy-Org/cookiecutter-comfy-extension) template. It helps you start writing custom nodes without worrying about the Python setup.
@@ -14,14 +14,20 @@ A ComfyUI extension to allow textarea elements to be scrolled over. Useful when 
 
 # Features
 
-- A list of features
+- Optimizes touchpad two-finger scrolling behavior for ComfyUI canvas navigation
+- Prevents accidental browser back/forward navigation when using horizontal touchpad gestures
+- Redirects two-finger scrolling over textareas to pan the canvas instead (configurable in options)
+- Implements smoother touchpad-friendly zoom with ⌃+two-finger scroll or pinch gestures
+- Implements a finer-grained zooming experience with ⌃+⌘+two-finger scroll or pinch gestures
+- Customizable target selectors through settings
+- Toggle functionality on/off through the settings panel
 
 ## Develop
 
 To install the dev dependencies and pre-commit (will run the ruff hook), do:
 
 ```bash
-cd comfyui_scroll_over_textarea
+cd ComfyUI/custom_nodes/comfyui_touchpad_scroll_controller
 pip install -e .[dev]
 pre-commit install
 ```
@@ -43,7 +49,7 @@ git push
 
 ## Writing custom nodes
 
-An example custom node is located in [node.py](src/comfyui_scroll_over_textarea/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
+An example custom node is located in [node.py](src/comfyui_touchpad_scroll_controller/nodes.py). To learn more, read the [docs](https://docs.comfy.org/essentials/custom_node_overview).
 
 ## Tests
 
