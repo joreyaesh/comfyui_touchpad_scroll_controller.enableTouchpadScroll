@@ -85,45 +85,45 @@ function updateScrollListener({
     app.extensionManager.setting.get(
       'comfyui_touchpad_scroll_controller.enableTouchpadScroll'
     );
-  if (!isTouchpadScrollEnabled) {
-    return;
+
+  // Set up the processMouseWheel override only if enabled
+  if (isTouchpadScrollEnabled) {
+    /**
+     * Smooth scrolling for touchpad
+     */
+    // @ts-ignore
+    window.LGraphCanvas.prototype.processMouseWheel = function (
+      /** @type {WheelEvent}*/ event
+    ) {
+      if (!this.graph || !this.allow_dragcanvas) return;
+
+      const { clientX: x, clientY: y } = event;
+      if (this.viewport) {
+        const [viewportX, viewportY, width, height] = this.viewport;
+        const isInsideX = x >= viewportX && x < viewportX + width;
+        const isInsideY = y >= viewportY && y < viewportY + height;
+        if (!(isInsideX && isInsideY)) return;
+      }
+
+      let scale = this.ds.scale;
+      let { deltaX, deltaY } = event;
+
+      if (event.metaKey || event.ctrlKey) {
+        let SCALE = event.ctrlKey ? 150 : 100;
+        if (event.metaKey) SCALE *= -1 / 0.5;
+        this.ds.changeScale(scale - deltaY / SCALE, [
+          event.clientX,
+          event.clientY,
+        ]);
+      } else {
+        this.ds.mouseDrag(-deltaX, -deltaY);
+      }
+      this.graph.change();
+
+      event.preventDefault();
+      return false; // prevent default
+    };
   }
-
-  /**
-   * Smooth scrolling for touchpad
-   */
-  // @ts-ignore
-  window.LGraphCanvas.prototype.processMouseWheel = function (
-    /** @type {WheelEvent}*/ event
-  ) {
-    if (!this.graph || !this.allow_dragcanvas) return;
-
-    const { clientX: x, clientY: y } = event;
-    if (this.viewport) {
-      const [viewportX, viewportY, width, height] = this.viewport;
-      const isInsideX = x >= viewportX && x < viewportX + width;
-      const isInsideY = y >= viewportY && y < viewportY + height;
-      if (!(isInsideX && isInsideY)) return;
-    }
-
-    let scale = this.ds.scale;
-    let { deltaX, deltaY } = event;
-
-    if (event.metaKey || event.ctrlKey) {
-      let SCALE = event.ctrlKey ? 150 : 100;
-      if (event.metaKey) SCALE *= -1 / 0.5;
-      this.ds.changeScale(scale - deltaY / SCALE, [
-        event.clientX,
-        event.clientY,
-      ]);
-    } else {
-      this.ds.mouseDrag(-deltaX, -deltaY);
-    }
-    this.graph.change();
-
-    event.preventDefault();
-    return false; // prevent default
-  };
 
   const selectors = targetSelectors || getTargetSelectors();
   const isTextareaScrollIgnored =
@@ -132,25 +132,26 @@ function updateScrollListener({
       'comfyui_touchpad_scroll_controller.enableTextareas'
     );
 
-  if (!isTouchpadScrollEnabled) {
-    selectors.forEach((selector) => {
-      const elements = document.querySelectorAll(selector);
+  // Update event listeners for all targeted elements
+  selectors.forEach((selector) => {
+    const elements = document.querySelectorAll(selector);
 
-      elements.forEach((element) => {
-        if (app.canvas) {
-          if (isTextareaScrollIgnored) {
-            element.addEventListener(
-              'mousewheel',
-              app.canvas['_ignore_textarea_scroll_callback']
-            );
-          } else {
-            element.removeEventListener(
-              'mousewheel',
-              app.canvas['_ignore_textarea_scroll_callback']
-            );
-          }
+    elements.forEach((element) => {
+      if (app.canvas) {
+        // Always remove existing listener first to avoid duplicates
+        element.removeEventListener(
+          'mousewheel',
+          app.canvas['_ignore_textarea_scroll_callback']
+        );
+
+        // Only add listener if both settings are enabled
+        if (isTouchpadScrollEnabled && isTextareaScrollIgnored) {
+          element.addEventListener(
+            'mousewheel',
+            app.canvas['_ignore_textarea_scroll_callback']
+          );
         }
-      });
+      }
     });
-  }
+  });
 }
