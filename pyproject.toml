@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "comfyui_touchpad_scroll_controller"
-version = "0.2.0"
+version = "0.3.0"
 description = "A ComfyUI extension that enhances touchpad navigation by redirecting two-finger scrolling over to the canvas, including over textareas. This can prevent accidental back/forward browser navigation when using horizontal touchpad gestures and provides smooth zooming and panning for Mac and other touchpad users."
 authors = [
   {name = "Josh Whaley", email = "josh@whaleymail.net"}
